@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Authorization Request</title>
+
+    <link rel="stylesheet" href="./src/css/authorize.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="./src/content/favicon-48x48.png"
+      sizes="48x48"
+    />
+    <link rel="icon" type="image/svg+xml" href="./src/content/favicon.svg" />
+    <link rel="shortcut icon" href="./src/content/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./src/content/apple-touch-icon.png"
+    />
+    <meta name="apple-mobile-web-app-title" content="TrustPort" />
+    <link rel="manifest" href="/site.webmanifest" />
+  </head>
+  <body>
+    <div class="container">
+      <div id="loadingSection" class="auth-container">
+        <div class="loading-spinner"></div>
+        <p class="loading-text">Checking authentication...</p>
+      </div>
+
+      <div id="consentSection" class="auth-container hidden">
+        <div class="app-info">
+          <div class="app-icon-wrapper">
+            <img
+              id="appIcon"
+              src="./src/content/cube-solid.svg"
+              alt="App icon"
+              class="app-icon"
+            />
+          </div>
+          <h2 class="title">Authorization Request</h2>
+          <p id="appName" class="app-name">Loading...</p>
+        </div>
+
+        <div class="consent-details">
+          <p class="consent-header">
+            <span id="appNameInline">This application</span> would like
+            permission to:
+          </p>
+          <ul id="scopeList" class="scope-list"></ul>
+        </div>
+
+        <div class="buttons">
+          <button id="denyBtn" class="btn secondary">Cancel</button>
+          <button id="authorizeBtn" class="btn primary">Authorize</button>
+        </div>
+
+        <div class="footer-text">
+          <p>
+            By authorizing this application, you are allowing it to access your
+            data according to the permissions above.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script defer src="./src/js/authorize.js"></script>
+  </body>
+</html>
