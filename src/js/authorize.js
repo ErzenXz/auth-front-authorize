@@ -8,7 +8,7 @@ const responseType = urlParams.get("response_type");
 
 async function fastAuthCheck() {
   try {
-    const response = await fetch("https://api.erzen.xyz/v1/auth/info", {
+    const response = await fetch("https://apis.erzen.xyz/v1/auth/info", {
       method: "GET",
       credentials: "include",
     });
@@ -36,7 +36,7 @@ async function loadConsentScreen() {
     }
     // Get consent screen information using the controller's endpoint
     const response = await fetch(
-      `https://api.erzen.xyz/oauth/consent?client_id=${clientId}&scope=${scope}`,
+      `https://apis.erzen.xyz/oauth/consent?client_id=${clientId}&scope=${scope}`,
       {
         method: "GET",
         credentials: "include",
@@ -79,7 +79,7 @@ async function loadConsentScreen() {
     } else {
       // Get authorization code using the controller's authorize endpoint
       const authResponse = await fetch(
-        `https://api.erzen.xyz/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scope}&state=${state}&response_type=${responseType}`,
+        `https://apis.erzen.xyz/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scope}&state=${state}&response_type=${responseType}`,
         {
           method: "GET",
           credentials: "include",
@@ -118,7 +118,7 @@ async function refreshToken() {
   }
 
   try {
-    const response = await fetch("https://api.erzen.xyz/v1/auth/refresh", {
+    const response = await fetch("https://apis.erzen.xyz/v1/auth/refresh", {
       method: "POST",
       credentials: "include",
       headers: {
@@ -160,7 +160,7 @@ async function init() {
 document.getElementById("authorizeBtn").addEventListener("click", async () => {
   try {
     // Grant consent using the controller's endpoint
-    await fetch("https://api.erzen.xyz/oauth/consent", {
+    await fetch("https://apis.erzen.xyz/oauth/consent", {
       method: "POST",
       credentials: "include",
       headers: {
@@ -176,7 +176,7 @@ document.getElementById("authorizeBtn").addEventListener("click", async () => {
 
     // Get authorization code using the controller's authorize endpoint
     const authResponse = await fetch(
-      `https://api.erzen.xyz/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scope}&state=${state}&response_type=${responseType}`,
+      `https://apis.erzen.xyz/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scope}&state=${state}&response_type=${responseType}`,
       {
         method: "GET",
         credentials: "include",
