@@ -25,14 +25,14 @@ async function redirectToLogin() {
   const returnTo = encodeURIComponent(currentUrl.toString());
 
   // Redirect to login page with return_to parameter
-  window.location.href = `https://auth.erzen.xyz/?return_to=${returnTo}`;
+  window.location.href = `https://auth.erzen.tk/?return_to=${returnTo}`;
 }
 
 async function loadConsentScreen() {
   try {
     if (!clientId || !redirectUri || !scope || !state || !responseType) {
       // Send them back from where they came from
-      // window.location.href = "https://auth.erzen.xyz";
+      // window.location.href = "https://auth.erzen.tk";
     }
     // Get consent screen information using the controller's endpoint
     const response = await fetch(
